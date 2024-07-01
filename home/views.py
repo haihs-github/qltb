@@ -144,6 +144,8 @@ def checkGioMuon():
         result_time_string = gioBatDauTiet(x.tiet)
         T= str(x.muon) + " "+ result_time_string 
         dateNow =str(timeVietnam("no"))
+        dateNow ='2024-07-01 19:56:59' #test thời gian 1
+        print(dateNow)
         if T== dateNow or dateNow>T or dateNow< x.tiet:
             device = Device.objects.get(id=x.deviceId_id)
             mt= BorrowReturn.objects.get(id=x.id)
@@ -154,8 +156,9 @@ def checkGioMuon():
             device.save() 
     for x in borrowReturn:
         result_time_string = gioBatDauTiet(x.tiet)
-        T= str(x.muon) + " "+ result_time_string 
+        T= str(x.muon) + " "+ result_time_string
         dateNow =str(timeVietnam("no"))
+        dateNow ='2024-07-01 19:56:59' #test thời gian 2
         if dateNow < T:
             if "-" in x.giaovien:
                 if "T" in x.giaovien:
@@ -170,6 +173,7 @@ def checkGioMuon():
              
 def checkLichSuMuon(deviceId,tietm,ngaym): 
     dateNow =str(timeVietnam("no"))
+    dateNow ='2024-07-01 19:56:59' #test thời gian 3
     result_time_string = gioBatDauTiet(tietm)
     T= str(ngaym) + " "+ result_time_string  
     if T < dateNow:
